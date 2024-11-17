@@ -29,7 +29,8 @@
         "DB_HOST": "71t04.h.filess.io",
         "DB_PORT": "3306",
         "DB_DATABASE": "db2024_cleanartdo",
-        "DB_USERNAME": "db2024_cleanartdo"
-    },
+        "DB_USERNAME": "db2024_cleanartdo",
+        "DB_PASSWORD":"8782b0b5bd5d57d45dabe71d38d4e38f8107e80a"
+    }
    
 }
