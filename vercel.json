@@ -4,9 +4,10 @@
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
-    "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
-        { "src": "/(.*)", "dest": "/api/index.php" }
+   "routes": [
+        { "src": "/favicon.png", "dest": "/public/favicon.png" },
+        { "src": "/api/(.*)", "dest": "/api/index.php" },
+        { "src": "/(.*)", "dest": "/public/$1" }
     ],
     "public": true,
     "buildCommand": "vite build",
