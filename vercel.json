@@ -31,7 +31,5 @@
         "DB_DATABASE": "db2024_cleanartdo",
         "DB_USERNAME": "db2024_cleanartdo"
     },
-    "engines": {
-        "node": "18.x"
-    }    
+   
 }
