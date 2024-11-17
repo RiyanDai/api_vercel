@@ -23,29 +23,26 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-
-//Protected Routes
-Route::group(['middleware' => ['auth:sanctum']], function(){
-    //user
+Route::group(['middleware' => ['auth:sanctum']], function() {
+    // User Routes
     Route::get('/user', [AuthController::class, 'user']);
     Route::put('/user', [AuthController::class, 'update']);
     Route::post('/logout', [AuthController::class, 'logout']);
-    
 
-    //post 
-    Route::get('/posts', [PostController::class, 'index']); //all posts
-    Route::post('/posts', [PostController::class, 'store']); //create posts
-    Route::get('/posts/{id}', [PostController::class, 'show']); //get single post
-    Route::put('/posts/{id}', [PostController::class, 'update']); //update posts
-    Route::delete('/posts{id}', [PostController::class, 'destroy']); //all posts
+    // Post Routes
+    Route::get('/posts', [PostController::class, 'index']); // Get all posts
+    Route::post('/posts', [PostController::class, 'store']); // Create post
+    Route::get('/posts/{id}', [PostController::class, 'show']); // Get single post
+    Route::put('/posts/{id}', [PostController::class, 'update']); // Update post
+    Route::delete('/posts/{id}', [PostController::class, 'destroy']); // Delete post
 
-     //Comments
-    Route::get('/posts/{id}/comments', [CommentController::class, 'index']); // all comments for a post
-    Route::post('/posts/{id}/comments', [CommentController::class, 'store']); // add a comment
-    Route::delete('/comments/{id}', [CommentController::class, 'destroy']); // delete a comment
+    // Comment Routes
+    Route::get('/posts/{id}/comments', [CommentController::class, 'index']); // Get comments for a post
+    Route::post('/posts/{id}/comments', [CommentController::class, 'store']); // Add comment to a post
+    Route::delete('/comments/{id}', [CommentController::class, 'destroy']); // Delete comment
 
-    //Likes
-    Route::post('/posts/{id}/likes', [LikeController::class, 'likeOrUnLike']); // like/unlike a post
+    // Like Routes
+    Route::post('/posts/{id}/likes', [LikeController::class, 'likeOrUnLike']);
      
 
 
