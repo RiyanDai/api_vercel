@@ -1,14 +1,13 @@
 {
     "version": 2,
-    "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.4.3" }
+        "api/index.php": { "runtime": "vercel-php@0.5.2" }
     },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
+        { "src": "/build/(.*)", "dest": "/public/build/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
-    "public": true,
+    "buildCommand": "npm run build",
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
@@ -29,7 +28,6 @@
         "DB_PORT": "3306",
         "DB_DATABASE": "db2024_cleanartdo",
         "DB_USERNAME": "db2024_cleanartdo",
-        "DB_PASSWORD":"8782b0b5bd5d57d45dabe71d38d4e38f8107e80a"
+        "DB_PASSWORD": "8782b0b5bd5d57d45dabe71d38d4e38f8107e80a"
     }
-   
 }
